@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/wistia-richard/test-package/environ"
 )
 
 func main() {
@@ -48,5 +50,10 @@ func main() {
 
 	// write to stdout
 	fmt.Println(string(data_read))
+
+	// get environment variables
+	for _, i := range environ.Env() {
+		fmt.Println(i)
+	}
 
 }
