@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/wistia-richard/test-package/environ"
@@ -56,4 +57,11 @@ func main() {
 		fmt.Println(i)
 	}
 
+	status := request()
+
+	if status == 200 {
+		fmt.Println("The request was succesful")
+	} else {
+		log.Fatal("The request failed")
+	}
 }
